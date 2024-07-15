@@ -1,0 +1,1 @@
+<img src="{{ asset('logo/KellyXGloTechs Logo-modified.png') }}" width="50px" > 
