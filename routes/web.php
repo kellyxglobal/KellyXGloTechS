@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Home\HomeSliderController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,12 @@ Route::get('/', function () {
 Route::controller(AdminController::class)->group(function () {
     Route::get('/about', 'index')->name('about.page')->middleware('check');
     Route::get('/contact', 'ContactedMethod')->name('contact.page');
+});
+
+// Home Slide All Route 
+Route::controller(HomeSliderController::class)->group(function () {
+    Route::get('/home/slide', 'HomeSlider')->name('home.slide');
+
 });
 
 // Admin All Route
