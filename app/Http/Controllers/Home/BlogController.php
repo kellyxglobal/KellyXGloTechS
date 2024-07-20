@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use illuminate\Support\Facades\Auth;
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\User;
 use Image;
 use Illuminate\Support\Carbon;
 
@@ -136,7 +138,7 @@ public function DeleteBlog($id){
         $allblogs = Blog::latest()->limit(5)->get();
         $blogs = Blog::findOrFail($id);
         $categories = BlogCategory::orderBy('blog_category','ASC')->get();
-        return view('frontend.blog_details',compact('blogs','allblogs','categories'));
+        return view('frontend.blog_details',compact('blogs','allblogs','categories','Userdata'));
 
      } // End Method 
 

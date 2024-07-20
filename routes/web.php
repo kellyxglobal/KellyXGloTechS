@@ -8,6 +8,7 @@ use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
+use App\Http\Controllers\Home\FooterController;
 
 
 /*
@@ -23,6 +24,14 @@ use App\Http\Controllers\Home\BlogController;
 
 Route::get('/', function () {
     return view('frontend.index');
+});
+
+
+// Footer All Route 
+Route::controller(FooterController::class)->group(function () {
+    Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
+
+
 });
 
 // Blog Category All Routes 

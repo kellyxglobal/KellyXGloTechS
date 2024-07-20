@@ -2,6 +2,7 @@
 @section('main')
 
 <main>
+                        
 
             <!-- breadcrumb-area -->
             <section class="breadcrumb__wrap">
@@ -39,6 +40,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
+                        
 
                         @foreach($allblogs as $item)
 <div class="standard__blog__post">
@@ -49,7 +51,7 @@
     <div class="standard__blog__content">
         <div class="blog__post__avatar">
             <div class="thumb"><img src="{{ asset($item->blog_image) }}" alt=""></div>
-            <span class="post__by">By : <a href="#">Halina Spond</a></span>
+            <span class="post__by">By : <a href="#">Supper Admin</a></span>
         </div>
         <h2 class="title"><a href="{{ route('blog.details',$item->id) }}">{{$item->blog_title}}</a></h2>
         <p>{!! Str::limit($item->blog_description, 200) !!}  </p>
