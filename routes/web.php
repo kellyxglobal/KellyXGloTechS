@@ -9,6 +9,8 @@ use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
+use App\Http\Controllers\Home\ContactUsController;
+
 
 
 /*
@@ -30,6 +32,19 @@ Route::get('/', function () {
 // Footer All Route 
 Route::controller(FooterController::class)->group(function () {
     Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
+    Route::post('/update/footer', 'UpdateFooter')->name('update.footer');
+    
+
+
+});
+
+// Contact All Route 
+    Route::controller(ContactUsController::class)->group(function () {
+    Route::get('/contact_us', 'Contact_Us')->name('contact_us.us');
+    Route::post('/store/message', 'StoreMessage')->name('store.message');
+    Route::get('/contact/message', 'ContactMessage')->name('contact.message');   
+    Route::get('/delete/message/{id}', 'DeleteMessage')->name('delete.message');   
+
 
 
 });
@@ -117,6 +132,7 @@ Route::controller(PortfolioController::class)->group(function () {
     Route::post('/update/portfolio', 'UpdatePortfolio')->name('update.protfolio');
     Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
+    Route::get('/portfolio', 'HomePortfolio')->name('home.portfolio');
 
 
 });

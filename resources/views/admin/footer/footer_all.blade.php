@@ -12,7 +12,7 @@
 
             <h4 class="card-title">Footer Page </h4>
 
-            <form method="post" action="{{ route('update.about') }}" >
+            <form method="post" action="{{ route('update.footer') }}" >
                 @csrf
 
                 <input type="hidden" name="id" value="{{ $allfooter->id }}">
@@ -20,7 +20,7 @@
             <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">Number</label>
                 <div class="col-sm-10">
-                    <input name="number" class="form-control" type="text" value="{{ $allfooter->number }}"  id="example-text-input">
+                    <input name="number" class="form-control" type="text" value="{{ $allfooter->number }}" id="example-text-input">
                 </div>
             </div>
             <!-- end row -->
@@ -66,6 +66,46 @@
                 <label for="example-text-input" class="col-sm-2 col-form-label">Twitter</label>
                 <div class="col-sm-10">
                     <input name="twitter" class="form-control" type="text" value="{{ $allfooter->twitter }}"  id="example-text-input">
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">LinkedIn</label>
+                <div class="col-sm-10">
+                    <input name="twitter" class="form-control" type="text" value="{{ $allfooter->linkedin }}"  id="example-text-input">
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">TikTok</label>
+                <div class="col-sm-10">
+                    <input name="twitter" class="form-control" type="text" value="{{ $allfooter->tiktok }}"  id="example-text-input">
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">Instagram</label>
+                <div class="col-sm-10">
+                    <input name="twitter" class="form-control" type="text" value="{{ $allfooter->instagram }}"  id="example-text-input">
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">Youtube</label>
+                <div class="col-sm-10">
+                    <input name="twitter" class="form-control" type="text" value="{{ $allfooter->youtube }}"  id="example-text-input">
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">Whatsapp</label>
+                <div class="col-sm-10">
+                    <input name="twitter" class="form-control" type="text" value="{{ $allfooter->whatsapp }}"  id="example-text-input">
                 </div>
             </div>
             <!-- end row -->

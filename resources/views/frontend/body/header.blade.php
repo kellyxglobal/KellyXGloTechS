@@ -15,18 +15,14 @@
     <li class="active"><a href="{{ url('/') }}">Home</a></li>
     <li><a href="{{ route('home.about') }}">About</a></li>
     <li><a href="services-details.html">Services</a></li>
-    <li class="menu-item-has-children"><a href="#">Portfolio</a>
-        <ul class="sub-menu">
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="portfolio-details.html">Portfolio Details</a></li>
-        </ul>
-    </li>
-    <li class="menu-item-has-children"><a href="{{ route('home.blog') }}">Our Blog</a></li>
-    <li><a href="contact.html">contact me</a></li>
+    <li class="menu-item-has-children"><a href="{{ route('home.portfolio') }}">Portfolio</a>
+    </li>  
+    <li class="menu-item-has-children"><a href="{{ route('home.blog') }}">Our Blog</a>
+    <li><a href="{{ route('contact_us.us') }}">contact Us</a></li>
     </ul>
     </div>
     <div class="header__btn d-none d-md-block">
-    <a href="contact.html" class="btn">Contact me</a>
+    <a href="{{ route('contact_us.us') }}" class="btn">Submit A Quote</a>
     </div>
     </nav>
     </div>
