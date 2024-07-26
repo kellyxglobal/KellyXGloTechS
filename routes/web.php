@@ -10,6 +10,7 @@ use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactUsController;
+use App\Http\Controllers\Demo\DemoController;
 
 
 
@@ -24,8 +25,15 @@ use App\Http\Controllers\Home\ContactUsController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
+//Route::get('/', function () {
+//   return view('frontend.index');
+//});
+
+Route::controller(DemoController::class)->group(function () {
+    Route::get('/', 'HomeMain')->name('home');
+
+    Route::get('/about_page', 'Index')->name('about.page')->middleware('check');
+    Route::get('/contact_us', 'ContactMethod')->name('contact.page');
 });
 
 
@@ -113,6 +121,7 @@ Route::controller(AboutController::class)->group(function () {
 });
 
 // Admin All Route
+Route::middleware(['auth'])->group(function () {
 Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/logout', 'destroy')->name('admin.logout');
     Route::get('/admin/profile', 'Profile')->name('admin.profile');
@@ -120,6 +129,7 @@ Route::controller(AdminController::class)->group(function () {
     Route::post('/store/profile', 'StoreProfile')->name('store.profile');
     Route::get('/change/password', 'ChangePassword')->name('change.password');
     Route::post('/update/password', 'UpdatePassword')->name('update.password');
+});
 });
 
 
@@ -133,7 +143,6 @@ Route::controller(PortfolioController::class)->group(function () {
     Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
     Route::get('/portfolio', 'HomePortfolio')->name('home.portfolio');
-
 
 });
 
